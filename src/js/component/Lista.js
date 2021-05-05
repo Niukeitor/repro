@@ -1,22 +1,22 @@
 import React from "react";
-
-export function Lista() {
+import PropType from "prop-types";
+export function Lista(props) {
 	return (
 		<div className="list-group">
-			<a href="#" className="list-group-item list-group-item-action">
-				A
-			</a>
-
-			<a
-				href="#"
-				className="list-group-item list-group-item-action list-group-item-primary">
-				A
-			</a>
-			<a
-				href="#"
-				className="list-group-item list-group-item-action list-group-item-secondary">
-				A
-			</a>
+			{props.listacanciones.map(cancion => {
+				return (
+					<a
+						key={cancion.id}
+						href="#"
+						className="list-group-item list-group-item-action">
+						{cancion.id}
+						{cancion.name}
+					</a>
+				);
+			})}
 		</div>
 	);
 }
+Lista.propTypes = {
+	listacanciones: PropType.array
+};

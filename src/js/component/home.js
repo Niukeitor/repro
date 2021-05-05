@@ -3,7 +3,7 @@ import { Lista } from "./Lista";
 
 //create your first component
 export function Home() {
-	[
+	let canciones = [
 		{
 			id: 1,
 			category: "game",
@@ -24,8 +24,19 @@ export function Home() {
 		}
 	];
 	return (
-		<div className="d-flex justify-content-center align-items-center vh-100">
-			<Lista></Lista>
+		<div className="container-fluid">
+			<Lista listacanciones={canciones}></Lista>
+			<div className="bg-success d-flex justify-content-center">
+				<a>
+					<i class="far fa-hand-point-left"></i>
+				</a>
+				<a>
+					<i class="far fa-play-circle"></i>
+				</a>
+				<a>
+					<i class="far fa-hand-point-right"></i>
+				</a>
+			</div>
 		</div>
 	);
 }
