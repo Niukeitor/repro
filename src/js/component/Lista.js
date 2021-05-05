@@ -9,8 +9,7 @@ export function Lista(props) {
 						key={cancion.id}
 						href="#"
 						className="list-group-item list-group-item-action">
-						{cancion.id}
-						{cancion.name}
+						{cancion.id + " " + cancion.name}
 					</a>
 				);
 			})}
